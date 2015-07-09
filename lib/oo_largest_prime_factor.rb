@@ -6,14 +6,7 @@ class LargestPrimeFactor
   end
 
   def number
-    prime = num
-    (Math.sqrt(num).round).downto(2) do |i|
-      if num % i == 0 && prime?(i)
-        prime = i
-        break
-      end
-    end
-    prime    
+    (Math.sqrt(num).round).downto(2){ |i| return i if num % i == 0 && prime?(i) } 
   end
 
   def prime?(num)

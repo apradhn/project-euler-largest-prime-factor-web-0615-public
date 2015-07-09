@@ -1,14 +1,7 @@
 def largest_prime_factor(num)
-  prime = num
-  (Math.sqrt(num).round).downto(2) do |i|
-    if num % i == 0 && prime?(i)
-      prime = i
-      break
-    end
-  end
-  prime
+  (Math.sqrt(num).round).downto(2){ |i| return i if num % i == 0 && prime?(i) }
 end
 
 def prime?(num)
-  (2..(Math.sqrt(num).round)).none?{|n| num % n == 0}
+  (2..(Math.sqrt(num).round)).none?{ |n| num % n == 0 }
 end
