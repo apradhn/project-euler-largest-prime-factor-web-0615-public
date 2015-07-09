@@ -10,5 +10,5 @@ def largest_prime_factor(num)
 end
 
 def prime?(num)
-  (2..(Math.sqrt(num).round)).to_a.reverse.none?{|n| num % n == 0}
+  (2..(Math.sqrt(num).round)).none?{|n| num % n == 0}
 end
